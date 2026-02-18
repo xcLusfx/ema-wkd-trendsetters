@@ -77,6 +77,13 @@ header nav .nav-hamburger button {
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  box-shadow: none;
+}
+
+header nav .nav-hamburger button:hover,
+header nav .nav-hamburger button:focus {
+  background-color: var(--background-color);
+  box-shadow: none;
 }
 
 header nav .nav-hamburger-icon,
@@ -167,9 +174,12 @@ header nav[aria-expanded='true'] .nav-sections {
   align-self: start;
 }
 
-header nav .nav-sections ul {
+header nav ul {
   list-style: none;
   padding-left: 0;
+}
+
+header nav .nav-sections ul {
   font-size: var(--body-font-size-s);
 }
 
