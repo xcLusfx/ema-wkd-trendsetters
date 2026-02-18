@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: var(--light-color);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -76,7 +76,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--light-color);
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -86,7 +86,7 @@ header nav .nav-hamburger button {
 
 header nav .nav-hamburger button:hover,
 header nav .nav-hamburger button:focus {
-  background-color: var(--background-color);
+  background-color: var(--light-color);
   box-shadow: none;
 }
 
@@ -184,7 +184,7 @@ header nav ul {
 }
 
 header nav .nav-sections ul {
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
 }
 
 header nav .nav-sections ul > li {
