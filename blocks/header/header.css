@@ -153,10 +153,11 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: auto;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
 }
 
 header nav .nav-brand img {
@@ -287,6 +288,7 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  flex-shrink: 0;
 }
 
 header nav .nav-tools a:any-link {
