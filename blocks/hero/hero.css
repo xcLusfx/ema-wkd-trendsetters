@@ -4,34 +4,97 @@
 }
 
 .hero {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* text row appears first visually */
+.hero > div:last-child {
+  order: -1;
+  text-align: center;
+  padding: 64px 0 40px;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  color: var(--text-color);
+}
+
+.hero p {
+  color: var(--text-color-muted);
+  font-size: var(--body-font-size-m);
+}
+
+/* buttons row */
+.hero p:last-child:has(a) {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero p:last-child a {
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 1600px;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-color);
+  text-decoration: none;
+  box-shadow: var(--text-color) 0 0 0 2px inset, var(--accent-color-50) 4px 4px 0 0;
+  transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s;
+}
+
+.hero p:last-child a:hover {
+  background-color: var(--accent-color-10);
+  box-shadow: var(--text-color) 0 0 0 2px inset, var(--accent-color-50) 7px 7px 0 0;
+  text-decoration: none;
+}
+
+/* images row */
+.hero > div:first-child > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.hero > div:first-child p {
+  display: contents;
 }
 
 .hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
 
 .hero img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 0 32px;
+  }
+
+  .hero > div:last-child {
+    padding: 64px 0 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero > div:first-child > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
   }
 }
