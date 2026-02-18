@@ -1,20 +1,86 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--dark-color);
+  color: var(--text-color-inverse);
+  font-size: var(--body-font-size-s);
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 64px 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer a:any-link {
+  color: var(--text-color-inverse);
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+}
+
+/* brand section */
+footer .footer .section:first-child p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+/* social links row */
+footer .footer .section:first-child p:last-child {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color-inverse-muted);
+}
+
+/* section separator */
+footer .footer .section:first-child {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+/* link columns grid */
+footer .footer .footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* column headings */
+footer .footer h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-color-inverse-muted);
+  margin: 0 0 12px;
+}
+
+/* link lists */
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer ul li {
+  margin-bottom: 8px;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 64px 32px;
+  }
+
+  footer .footer .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
