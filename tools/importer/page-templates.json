@@ -1,0 +1,31 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://wknd-trendsetters.site"],
+      "description": "WKND Trendsetters homepage with hero, features, articles, tabs, FAQ, and CTA sections",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": ["header.section"]
+        },
+        {
+          "name": "columns",
+          "instances": ["section.section > .container > .w-layout-grid.desktop-4-column", "section.section:last-of-type > .container > .w-layout-grid"]
+        },
+        {
+          "name": "cards",
+          "instances": ["section.section.secondary-section > .container > .w-layout-grid.grid-layout.tablet-1-column"]
+        },
+        {
+          "name": "tabs",
+          "instances": ["section.section.inverse-section .w-tabs"]
+        },
+        {
+          "name": "accordion",
+          "instances": ["section.section.secondary-section .accordion"]
+        }
+      ]
+    }
+  ]
+}
