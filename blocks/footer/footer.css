@@ -37,7 +37,7 @@ footer .footer .footer-brand {
 
 footer .footer .footer-brand p:first-child {
   font-family: var(--body-font-family);
-  font-size: 24px;
+  font-size: var(--body-font-size-m);
   font-weight: 400;
   line-height: 1.2;
   text-transform: uppercase;
@@ -58,7 +58,7 @@ footer .footer h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-color-inverse-muted);
-  margin: 0 0 12px;
+  margin: 0 0 8px;
 }
 
 /* link lists */
@@ -69,8 +69,9 @@ footer .footer ul {
 }
 
 footer .footer ul li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   font-size: var(--body-font-size-m);
+  line-height: 1.6;
 }
 
 @media (width >= 600px) {
