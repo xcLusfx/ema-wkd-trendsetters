@@ -25,30 +25,43 @@ export default async function decorate(block) {
     }
   });
 
-  // restructure link columns into a grid
+  // build flat grid: brand+social column + link columns
   const sections = footer.querySelectorAll('.section');
-  if (sections.length > 1) {
-    const columnsSection = sections[sections.length - 1];
-    const wrapper = columnsSection.querySelector('.default-content-wrapper');
-    if (wrapper) {
-      const columnsGrid = document.createElement('div');
-      columnsGrid.className = 'footer-columns';
-      let currentColumn = null;
+  const grid = document.createElement('div');
+  grid.className = 'footer-grid';
 
+  // brand+social column from first section
+  if (sections.length > 0) {
+    const brandCol = document.createElement('div');
+    brandCol.className = 'footer-brand';
+    const brandWrapper = sections[0].querySelector('.default-content-wrapper');
+    if (brandWrapper) {
+      while (brandWrapper.firstChild) brandCol.append(brandWrapper.firstChild);
+    }
+    grid.append(brandCol);
+  }
+
+  // link columns from second section
+  if (sections.length > 1) {
+    const wrapper = sections[1].querySelector('.default-content-wrapper');
+    if (wrapper) {
+      let currentColumn = null;
       [...wrapper.children].forEach((child) => {
         if (child.tagName === 'H3') {
           currentColumn = document.createElement('div');
           currentColumn.className = 'footer-column';
-          columnsGrid.append(currentColumn);
+          grid.append(currentColumn);
           currentColumn.append(child);
         } else if (currentColumn) {
           currentColumn.append(child);
         }
       });
-
-      wrapper.append(columnsGrid);
     }
   }
+
+  // replace all sections with the flat grid
+  footer.textContent = '';
+  footer.append(grid);
 
   block.append(footer);
 }

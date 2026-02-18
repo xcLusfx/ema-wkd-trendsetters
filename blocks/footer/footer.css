@@ -1,13 +1,12 @@
 footer {
   background-color: var(--dark-color);
   color: var(--text-color-inverse);
-  font-size: var(--body-font-size-s);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 64px 24px;
+  max-width: 1280px;
+  padding: 48px 16px;
 }
 
 footer .footer p {
@@ -23,34 +22,27 @@ footer .footer a:hover {
   text-decoration: underline;
 }
 
-/* brand section */
-footer .footer .section:first-child p:first-child {
+/* flat grid layout */
+footer .footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+/* brand column */
+footer .footer .footer-brand p:first-child {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-s);
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.01em;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-/* social links row */
-footer .footer .section:first-child p:last-child {
+/* social links */
+footer .footer .footer-brand p:last-child {
   font-size: var(--body-font-size-xs);
   color: var(--text-color-inverse-muted);
-}
-
-/* section separator */
-footer .footer .section:first-child {
-  padding-bottom: 32px;
-  margin-bottom: 32px;
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
-}
-
-/* link columns grid */
-footer .footer .footer-columns {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
 }
 
 /* column headings */
@@ -59,7 +51,7 @@ footer .footer h3 {
   font-size: var(--body-font-size-xs);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   color: var(--text-color-inverse-muted);
   margin: 0 0 12px;
 }
@@ -73,14 +65,21 @@ footer .footer ul {
 
 footer .footer ul li {
   margin-bottom: 8px;
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  footer .footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 64px 32px;
+    padding: 48px 32px;
   }
 
-  footer .footer .footer-columns {
-    grid-template-columns: repeat(3, 1fr);
+  footer .footer .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
