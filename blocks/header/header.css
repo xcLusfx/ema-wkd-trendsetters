@@ -37,8 +37,8 @@ header nav[aria-expanded='true'] {
 
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
+    justify-content: flex-start;
+    gap: 0 16px;
     max-width: 1280px;
     padding: 12px 16px;
   }
@@ -156,9 +156,19 @@ header .nav-brand {
   grid-area: brand;
   flex-basis: auto;
   font-size: var(--body-font-size-m);
-  font-weight: 400;
-  line-height: 1;
-  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 100px;
+}
+
+header nav .nav-brand a:any-link {
+  text-decoration: none;
+}
+
+header .nav-brand li::before {
+  content: '\2726\2002';
+  font-size: 10px;
+  vertical-align: top;
 }
 
 header nav .nav-brand img {
@@ -340,20 +350,29 @@ header nav .nav-tools a:any-link {
   font-weight: 400;
   line-height: 1.2;
   color: var(--text-color);
-  text-decoration: none;
+  text-decoration: underline;
   background: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
-header nav .nav-tools a:any-link::before {
-  content: '\2022';
-  margin-right: 8px;
-}
-
 header nav .nav-tools a:hover {
   text-decoration: underline;
   background: none;
   box-shadow: none;
+}
+
+@media (width >= 900px) {
+  header nav .nav-tools a:any-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1.5px solid var(--text-color);
+    border-radius: 24px;
+  }
+
+  header nav .nav-tools a:hover {
+    text-decoration: none;
+    background: rgb(0 0 0 / 5%);
+  }
 }
