@@ -19,16 +19,22 @@ const TransformHook = {
 
 export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.beforeTransform) {
-    // Remove navigation (captured DOM: div.nav.secondary-nav)
+    // Remove navigation
     WebImporter.DOMUtils.remove(element, [
+      '.navbar',
       '.nav.secondary-nav',
       '.w-nav-overlay',
       '.nav-mobile-menu-button',
     ]);
 
-    // Remove footer (captured DOM: footer.footer.inverse-footer)
+    // Remove skip link
+    const skipLink = element.querySelector('a[href="#main-content"]');
+    if (skipLink) skipLink.closest('div, p')?.remove() || skipLink.remove();
+
+    // Remove footer
     WebImporter.DOMUtils.remove(element, [
       'footer.footer',
+      'footer.inverse-footer',
     ]);
 
     // Remove inline SVG data URIs used as decorative icons

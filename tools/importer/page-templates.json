@@ -25,7 +25,34 @@
           "name": "accordion",
           "instances": ["section.section.secondary-section .accordion"]
         }
-      ]
+      ],
+      "sections": [
+        {
+          "name": "hero",
+          "style": "secondary"
+        },
+        {
+          "name": "features",
+          "style": ""
+        },
+        {
+          "name": "articles",
+          "style": "secondary"
+        },
+        {
+          "name": "tabs",
+          "style": "inverse"
+        },
+        {
+          "name": "faq",
+          "style": "secondary"
+        },
+        {
+          "name": "cta",
+          "style": ""
+        }
+      ],
+      "sectionSelector": "header.section, section.section"
     }
   ]
 }
