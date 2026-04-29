@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--light-color);
+  background-color: #fff;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -32,15 +32,18 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgb(232 232 232);
   }
 
   header nav {
     display: flex;
-    justify-content: flex-start;
-    gap: 0 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
     max-width: 1280px;
-    padding: 12px 16px;
+    padding: 16px 24px;
   }
 
   header nav[aria-expanded='true'] {
@@ -60,7 +63,7 @@ header nav a:any-link {
 
 header nav .nav-sections a:any-link,
 header nav .nav-sections .nav-drop {
-  color: rgb(0 0 0 / 75%);
+  color: var(--text-color);
 }
 
 /* hamburger */
@@ -155,10 +158,11 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 header .nav-brand {
   grid-area: brand;
   flex-basis: auto;
-  font-size: var(--body-font-size-m);
+  flex-shrink: 0;
+  font-size: var(--body-font-size-s);
   font-weight: 700;
   line-height: 1.2;
-  max-width: 100px;
+  text-transform: uppercase;
 }
 
 header nav .nav-brand a:any-link {
@@ -196,7 +200,7 @@ header nav ul {
 }
 
 header nav .nav-sections ul {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   line-height: 1.2;
 }
 
@@ -206,7 +210,6 @@ header nav .nav-sections .default-content-wrapper > ul > li {
   font-weight: 400;
   line-height: 1.4;
   padding: 9px 14px;
-  color: rgb(0 0 0 / 75%);
 }
 
 header nav .nav-sections ul > li strong {
@@ -255,9 +258,10 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
 
 @media (width >= 900px) {
   header nav .nav-sections {
-    display: block;
+    display: flex;
     visibility: visible;
     white-space: nowrap;
+    justify-content: center;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -265,10 +269,12 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-font-size-s);
+    font-weight: 500;
     padding: 8px 12px;
     flex: 0 1 auto;
     position: relative;
+    border-radius: 8px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li.nav-drop {
@@ -315,9 +321,10 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
-    border-radius: 0;
+    background-color: #fff;
+    border-radius: 12px;
     white-space: initial;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
@@ -329,11 +336,15 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid #fff;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li:hover {
+    background-color: rgb(0 0 0 / 5%);
   }
 }
 
@@ -346,7 +357,7 @@ header nav .nav-tools {
 header nav .nav-tools a:any-link {
   display: inline-block;
   padding: 8px 0;
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   font-weight: 400;
   line-height: 1.2;
   color: var(--text-color);
@@ -365,14 +376,18 @@ header nav .nav-tools a:hover {
 
 @media (width >= 900px) {
   header nav .nav-tools a:any-link {
-    padding: 10px 20px;
+    padding: 12px 24px;
+    font-weight: 600;
     text-decoration: none;
-    border: 1.5px solid var(--text-color);
-    border-radius: 24px;
+    color: #fff;
+    background-color: #000;
+    border: 2px solid #000;
+    border-radius: 9999px;
   }
 
   header nav .nav-tools a:hover {
     text-decoration: none;
-    background: rgb(0 0 0 / 5%);
+    color: #fff;
+    background-color: rgb(0 0 0 / 85%);
   }
 }
